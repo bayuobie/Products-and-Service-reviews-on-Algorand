@@ -2,11 +2,10 @@
 This solution is a PHP/Javascript implementation building decentralised user reviews on the blockchain. It allows the user to to submit reviews on products and services with the ecommerce space. Users can anonymously sign reviews or the shop or product owner can only accept reviews after the user has paid for the product or service. 
 
 #Implementation architecture
-Every algorand transaction type supports a property type/field called "Note". This allows the sender of the transaction to can add message to accompany the transaction. It is similar to the remarks/reference we leave in bank transactions. The notefield on Algorand can, however, be used for many things. For this solution, it heavily relies on using the Algorand notefield to pull reviews related to an account. Every review will be sent to the chain as a zero transation 
+Every algorand transaction type supports a property type/field called "Note". This allows the sender of the transaction to can add message to accompany the transaction. It is similar to the remarks/reference we leave in bank transactions. The notefield on Algorand can, however, be used for many things. For this solution, it heavily relies on using the Algorand notefield to pull reviews related to an account. Every review will be sent to the chain as a zero transation with the review details attached to the note field. 
 
 # Dependencies
 This implementation uses the Algorand Javascript SDK which you can download and link in your script or import if you have NPM installed. Check the Algorand Javascript SDK for the instructions or simply download the latest file for quick test and implementation. 
-To get the cryptocurrency rates to USD or any other currencies, the Binance API found here https://api.binance.com/api/v3/ticker/24hr 
 
 # Interacting with Algorand chain
 There are two ways of sending and retrieving transactions on Algorand. First option is to run an Algorand Node and use it to process the transactions. As you may understand, setting up and running your own node is costly, and also involves deeper technical knowledge about nodes. The second option is to use community APIs to interact with the blockchain. The APIs offer endpoints to post and retrive transactions on the chain. While some are free, others are paid after certain transactions limits. Since this script's goal is to post and retrieve payment transaction data to the Algorand chain, the second option is chosen. There are currently 2 Algorand rest APIs namely Purestake (requires an account to ge API keys) and Algoexplorer which requires no account signup. We combined the two APIs for different purposes but if you don't want to create an account with Purestake, just stick with AlgoExplorer API. 
@@ -16,7 +15,7 @@ We used the testnets for all testing but you could just switch the API endpoints
 
 # Deployment
 This is a PHP implementation which will run on any linux server that supports PHP. This implementation was done on a Xampp localhost. To deploy and test this
-1. Simple upload the folder into the htdocs folder or on your public_html on a shared hosting for example. Run the index.php script to start the script
+1. Simply upload the folder into the htdocs folder or on your public_html on a shared hosting for example. Run the index.php script to start the script
 2. You will need to create the databases using the tblproducts.sql
 3. We have included the Algosdk as but you should import this using NPM or always make sure you link to the latest version
 4. In the js/scrips.js file, set the address to receive payments. The Mnemonic keys of this address will be used to sign transactions as well
