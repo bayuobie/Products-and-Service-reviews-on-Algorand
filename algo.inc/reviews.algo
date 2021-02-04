@@ -1,0 +1,66 @@
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="rounded shadow">
+                            <div class="p-4 bg-light">
+                                <h4 class="mb-0">(<?=isset($_REQUEST['p'])?$_REQUEST['p']:'ITM001'?>) Product / Service Title</h4>
+                                <h6 class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </h6>
+                            </div>
+                            <div id="prodReviews">
+                                <center><div class="spinner-grow align-self-center"></div></center>
+                            </div>
+
+                        </div>
+
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                        <div class="card border-0 sidebar sticky-bar rounded shadow bg-light">
+                            <div class="card-body">
+                                
+                                <!-- Categories -->
+                                <div class="widget mb-4 pb-2">
+                                    <h5 class="widget-title">Leave a Review</h5>
+                                    <form id="review-form" class="login-form mt-4" action="#">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label>Full Name <span class="text-danger">*</span></label>
+                                                    <div class="position-relative">
+                                                        <i data-feather="user" class="fea icon-sm icons"></i>
+                                                        <input type="text" class="form-control pl-5" placeholder="Your Full Name" id="full-name" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label>Email <span class="text-danger">*</span></label>
+                                                    <div class="position-relative">
+                                                        <i data-feather="at-sign" class="fea icon-sm icons"></i>
+                                                        <input type="email" class="form-control pl-5" placeholder="Your Email" id="uemail" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label>Review Message <span class="text-danger">*</span></label>
+                                                    <div class="position-relative">
+                                                        <textarea class="form-control" rows="1" cols="20" maxlength="150" placeholder="Enter text here..." id="comments" required=""></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-lg-12 mb-0">
+                                                <button type="button" onclick="doTransaction('review')" class="btn btn-primary btn-block submitBtn">Submit Review</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                
+
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div>
